@@ -28,19 +28,21 @@ function App() {
       </header>
       
       <main className="main-content">
-        <div className="books-grid">
-          {books.map((book) => (
-            <Book 
-              key={book.isbn13} 
-              title={book.title} 
-              price={book.price}
-              subtitle={book.subtitle}
-              image={book.image}
-              url={book.url}
-            />
-          ))}
+        <div className="container">
           <div className="add-book-card" onClick={handleAddBook}>
             <div className="add-book-text">Add Book +</div>
+          </div>
+          <div className="books-grid">
+            {books.map((book) => (
+              <Book 
+                key={book.isbn13} 
+                title={book.title} 
+                price={book.price}
+                subtitle={book.subtitle}
+                image={book.image}
+                url={book.url}
+              />
+            ))}
           </div>
         </div>
       </main>
