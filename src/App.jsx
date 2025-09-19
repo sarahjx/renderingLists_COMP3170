@@ -2,13 +2,13 @@ import { useState } from 'react'
 import booksData from './data/books.json'
 import './App.css'
 
-function Book({ title, price, subtitle, image }) {
+function Book({ title, price, subtitle, image, url }) {
   return (
     <div className="book">
       {image && <img src={image} alt={title} className="book-image" />}
       <h3>{title}</h3>
-      <p className="author">{subtitle}</p>
-      <a href="#" className="learn-more">Learn more</a>
+      <p className="price">{price}</p>
+      <a href={url} target="_blank" rel="noopener noreferrer" className="learn-more">Learn more</a>
     </div>
   )
 }
@@ -36,6 +36,7 @@ function App() {
               price={book.price}
               subtitle={book.subtitle}
               image={book.image}
+              url={book.url}
             />
           ))}
           <div className="add-book-card" onClick={handleAddBook}>
